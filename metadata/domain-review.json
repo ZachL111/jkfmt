@@ -1,0 +1,73 @@
+{
+  "repo": "jkfmt",
+  "language": "Java",
+  "category": "Developer tools",
+  "goal": "Format JSON with stable key ordering and selector output checks.",
+  "review_model": {
+    "terms": [
+      "change width",
+      "diagnostic quality",
+      "review cost",
+      "safe rewrite"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "change width",
+      "signal": 41,
+      "slack": 21,
+      "drag": 9,
+      "confidence": 77,
+      "score": 153,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "diagnostic quality",
+      "signal": 63,
+      "slack": 31,
+      "drag": 22,
+      "confidence": 78,
+      "score": 169,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 74,
+      "slack": 49,
+      "drag": 16,
+      "confidence": 53,
+      "score": 202,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "safe rewrite",
+      "signal": 73,
+      "slack": 52,
+      "drag": 25,
+      "confidence": 84,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "change width",
+      "signal": 65,
+      "slack": 22,
+      "drag": 26,
+      "confidence": 79,
+      "score": 153,
+      "lane": "ship"
+    }
+  ]
+}
